@@ -1,0 +1,38 @@
+﻿@model DemoSlide4.Models.Departments
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Departments</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NameDep" class="control-label"></label>
+                <input asp-for="NameDep" class="form-control" />
+                <span asp-validation-for="NameDep" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DescriptionDep" class="control-label"></label>
+                <input asp-for="DescriptionDep" class="form-control" />
+                <span asp-validation-for="DescriptionDep" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
